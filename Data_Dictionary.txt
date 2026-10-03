@@ -1,0 +1,65 @@
+=========================================
+Dataset : salary_data.csv
+=========================================
+An IT services company's employee records.
+ONE ROW = ONE EMPLOYEE.
+Total rows : 500.
+
+EVERY COLUMN IS A NUMBER. There is no text column anywhere in this file, so
+dummy variables (pd.get_dummies) are NOT needed at all.
+
+emp_id                 : record number (1 to 500). Just a serial number.
+
+experience_years       : total work experience, in completed years
+
+experience_months      : the SAME experience, counted in months
+                         (experience_months = experience_years x 12)
+
+education_years        : QUALIFICATION, stored as a number - total years of
+                         formal education completed:
+                           12 = 12th pass
+                           15 = BCA / B.Sc  (3 year degree)
+                           16 = B.E / B.Tech (4 year degree)
+                           17 = MCA / M.Sc
+                           19 = Ph.D
+                         A qualification has a natural order (MCA is more study
+                         than BCA), so storing it as a number keeps that order
+                         and the model can use it directly.
+
+age_years              : age of the employee, in years
+
+work_hours_per_week    : average number of hours worked per week
+
+projects_completed     : number of projects the employee has completed so far
+
+certifications         : number of professional certifications held
+
+last_appraisal_rating  : rating in the last appraisal, from 1.0 to 5.0
+
+pf_contribution_rs     : Provident Fund deducted per month, in rupees.
+                         PF is 12% of basic pay, and basic pay is a fixed share
+                         of the salary.
+                         *** Known only AFTER the salary has been fixed and the
+                             first payslip is generated. ***
+
+salary_lpa             : TARGET COLUMN.
+                         Annual salary in lakhs per annum (LPA).
+                         Example: 7.5 means Rs 7,50,000 per year.
+
+=========================================
+Note for students
+=========================================
+This file contains THREE problems. Find all three before you build any model.
+
+  - One column is another column in a different unit.
+  - One column cannot be known at the time you need the prediction.
+  - One column is almost exactly the sum of two other columns.
+
+Hint for the third one: what is 6 + education_years + experience_years?
+
+=========================================
+Source
+=========================================
+This is a synthetic (computer-generated) dataset created for classroom practice.
+The salary figures are realistic for the Indian IT services industry, but they do
+not describe any real employee or real company.
